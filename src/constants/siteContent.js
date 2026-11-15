@@ -1,0 +1,88 @@
+export const SITE_CATEGORIES = [
+  {
+    id: 'skincare',
+    name: 'Skincare',
+    nameBn: 'স্কিনকেয়ার',
+    tint: '#FBE4EA',
+    icon: 'droplets',
+    image: '/images/categories/category-skincare.jpg',
+    imageAlt: 'Frosted glass skincare serum dropper bottle and dewy cream swatch on blush pink',
+  },
+  {
+    id: 'makeup',
+    name: 'Makeup',
+    nameBn: 'মেকআপ',
+    tint: '#FCE6D9',
+    icon: 'sparkles',
+    image: '/images/categories/category-makeup.jpg',
+    imageAlt: 'Velvet matte rose-nude lipstick and cream blush smudge on warm peach',
+  },
+  {
+    id: 'hair-care',
+    name: 'Hair Care',
+    nameBn: 'হেয়ার কেয়ার',
+    tint: '#FAF0D4',
+    icon: 'scissors',
+    image: '/images/categories/category-hair-care.jpg',
+    imageAlt: 'Amber glass hair oil bottle and sculptural tortoiseshell comb on soft cream',
+  },
+  {
+    id: 'personal-care',
+    name: 'Personal Care',
+    nameBn: 'পার্সোনাল কেয়ার',
+    tint: '#E2EEE5',
+    icon: 'heart',
+    image: '/images/categories/category-personal-care.jpg',
+    imageAlt: 'Matte ceramic body cream jar and smooth spa stones on pastel mint sage',
+  },
+  {
+    id: 'fragrance',
+    name: 'Fragrance',
+    nameBn: 'সুগন্ধি',
+    tint: '#ECE4F6',
+    icon: 'flower',
+    image: '/images/categories/category-fragrance.jpg',
+    imageAlt: 'Sculptural clear glass perfume bottle catching soft prism light on pastel lavender',
+  },
+  {
+    id: 'beauty-tools',
+    name: 'Beauty Tools',
+    nameBn: 'বিউটি টুলস',
+    tint: '#E2ECF6',
+    icon: 'wand',
+    image: '/images/categories/category-beauty-tools.jpg',
+    imageAlt: 'Assorted professional beauty and makeup brushes arranged in a ceramic holder',
+  },
+];
+
+export const SITE_BRAND_VALUES = [
+  {
+    n: '01',
+    t: '100% authentic',
+    tBn: '১০০% অরিজিনাল',
+    d: 'Sourced directly from verified brands and authorized global distributors only.',
+    dBn: 'অনুমোদিত ডিস্ট্রিবিউটর থেকে সংগ্রহ।',
+  },
+  {
+    n: '02',
+    t: 'Cash on delivery',
+    tBn: 'ক্যাশ অন ডেলিভারি',
+    d: 'Pay cash at your doorstep upon receiving and checking your order.',
+    dBn: 'পণ্য হাতে পেয়ে টাকা দিন।',
+  },
+  {
+    n: '03',
+    t: 'Fast delivery',
+    tBn: 'দ্রুত ডেলিভারি',
+    d: 'Free shipping on orders over $50. Same-day dispatch on stock items.',
+    dBn: 'ঢাকায় ২-৩ দিন, ঢাকার বাইরে ৩-৫ দিন।',
+  },
+  {
+    n: '04',
+    t: 'Secure checkout',
+    tBn: 'নিরাপদ পেমেন্ট',
+    d: 'Cards, PayPal, Apple Pay, bKash & Nagad, 256-bit SSL encrypted.',
+    dBn: 'বিকাশ, নগদ, কার্ড — সবই সুরক্ষিত।',
+  },
+];
+

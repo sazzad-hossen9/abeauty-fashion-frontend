@@ -1,0 +1,564 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+@layer base {
+  html,
+  body {
+    margin: 0;
+    color: #1f1219;
+    font-family:
+      var(--font-dm-sans),
+      "DM Sans",
+      var(--font-hind-siliguri),
+      "Hind Siliguri",
+      "Anek Bangla",
+      system-ui,
+      -apple-system,
+      BlinkMacSystemFont,
+      "Segoe UI",
+      Roboto,
+      sans-serif;
+    letter-spacing: normal;
+    -webkit-font-smoothing: antialiased;
+  }
+
+  body {
+    @apply text-brand-dark bg-white antialiased;
+  }
+
+  /* Default typography across the entire site: DM Sans (English) & 'Anek Bangla', 'Hind Siliguri' (Bangla) */
+  html,
+  body,
+  h4,
+  h5,
+  h6,
+  p,
+  a,
+  ul,
+  ol,
+  li,
+  button,
+  input,
+  select,
+  textarea,
+  label,
+  legend,
+  .ab,
+  .fh,
+  .ck,
+  .card-title,
+  .product-title,
+  .subheading,
+  .sub-heading {
+    font-family:
+      var(--font-dm-sans),
+      "DM Sans",
+      var(--font-anek-bangla),
+      "Anek Bangla",
+      var(--font-hind-siliguri),
+      "Hind Siliguri",
+      system-ui,
+      -apple-system,
+      BlinkMacSystemFont,
+      "Segoe UI",
+      Roboto,
+      sans-serif;
+    letter-spacing: normal;
+  }
+
+  /* ONLY h1, h2, h3 and .d use Bricolage Grotesque (English) & 'Anek Bangla', 'Hind Siliguri' (Bangla) */
+  h1,
+  h2,
+  h3,
+  .d,
+  .heading,
+  .font-display {
+    font-family:
+      var(--font-bricolage), "Bricolage Grotesque", var(--font-anek-bangla),
+      "Anek Bangla", var(--font-hind-siliguri), "Hind Siliguri", system-ui,
+      sans-serif !important;
+    letter-spacing: -0.025em;
+    font-weight: 700;
+  }
+
+  /* Any child of h1, h2, h3 (unless .s / em) inherits Bricolage Grotesque & 'Anek Bangla', 'Hind Siliguri' */
+  h1 :not(.s):not(.serif):not(.font-serif):not(em):not(.font-sans),
+  h2 :not(.s):not(.serif):not(.font-serif):not(em):not(.font-sans),
+  h3 :not(.s):not(.serif):not(.font-serif):not(em):not(.font-sans),
+  .d :not(.s):not(.serif):not(.font-serif):not(em):not(.font-sans),
+  .heading :not(.s):not(.serif):not(.font-serif):not(em):not(.font-sans),
+  .font-display :not(.s):not(.serif):not(.font-serif):not(em):not(.font-sans) {
+    font-family:
+      var(--font-bricolage), "Bricolage Grotesque", var(--font-anek-bangla),
+      "Anek Bangla", var(--font-hind-siliguri), "Hind Siliguri", system-ui,
+      sans-serif !important;
+  }
+
+  /* Explicit Bengali text styling: strictly 'Anek Bangla' for headings and 'Hind Siliguri' for body matching Desktop-Home-BN.dc.html lines 16-17 */
+  [lang="bn"],
+  [lang="bn"] body,
+  [lang="bn"] p,
+  [lang="bn"] span,
+  [lang="bn"] a,
+  [lang="bn"] button,
+  [lang="bn"] input,
+  [lang="bn"] div,
+  .font-bengali,
+  .font-bangla {
+    font-family:
+      var(--font-hind-siliguri), "Hind Siliguri", var(--font-anek-bangla),
+      "Anek Bangla", sans-serif;
+  }
+  [lang="bn"] h1,
+  [lang="bn"] h2,
+  [lang="bn"] h3,
+  [lang="bn"] .d,
+  [lang="bn"] .heading,
+  [lang="bn"] .font-display {
+    font-family:
+      var(--font-anek-bangla), "Anek Bangla", var(--font-hind-siliguri),
+      "Hind Siliguri", sans-serif !important;
+  }
+
+  /* Large display hero headings */
+  h1.d,
+  h1 {
+    letter-spacing: -0.025em;
+  }
+
+  /* Accent Serif typography: Instrument Serif strictly on .s, .serif, .font-serif, em inside or outside headings */
+  .s,
+  .serif,
+  .font-serif,
+  em,
+  h1 .s,
+  h2 .s,
+  h3 .s,
+  .d .s,
+  .heading .s,
+  .font-display .s,
+  h1 em,
+  h2 em,
+  h3 em,
+  .d em,
+  .heading em,
+  .font-display em {
+    font-family:
+      var(--font-instrument-serif), "Instrument Serif", Georgia, serif !important;
+    font-style: italic !important;
+    font-weight: 400 !important;
+    letter-spacing: -0.01em;
+  }
+
+  /* Optical spacing between black Bricolage Grotesque text and pink Instrument Serif accent */
+
+  /* When Instrument Serif is followed by more text in a heading */
+  .d .s-lead,
+  h1 .s-lead,
+  h2 .s-lead,
+  h3 .s-lead {
+    margin-right: 0.16em;
+  }
+
+  /* Explicit DM Sans overrides if used inside a heading area */
+  .font-sans,
+  .font-sans * {
+    font-family:
+      var(--font-dm-sans), "DM Sans", var(--font-hind-siliguri),
+      "Hind Siliguri", system-ui, sans-serif !important;
+  }
+
+  /* Design specific classes */
+  .mut {
+    color: #6e5a63;
+  }
+
+  .eyebrow {
+    font-size: 12px;
+    font-weight: 700;
+    letter-spacing: 0.16em !important;
+    text-transform: uppercase;
+    color: #c8325f;
+  }
+
+  .phl {
+    position: absolute;
+    left: 14px;
+    bottom: 14px;
+    font-size: 11px;
+    font-weight: 700;
+    letter-spacing: 0.08em !important;
+    text-transform: uppercase;
+    color: #6b4f5b;
+  }
+
+  .fl {
+    color: #e6d3da;
+    font-size: 15px;
+    text-decoration: none;
+    letter-spacing: normal;
+    transition: color 0.15s ease;
+  }
+  .fl:hover {
+    color: #ffffff;
+  }
+}
+
+@layer components {
+  /* Buttons matching exact design specifications: 52px height, 28px padding, 999px rounded, 15px font */
+  .btn {
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    gap: 10px;
+    height: 52px;
+    padding: 0 28px;
+    border-radius: 999px;
+    background: #1f1219;
+    color: #ffffff;
+    font-family: "DM Sans", sans-serif;
+    font-weight: 600;
+    font-size: 15px;
+    line-height: 1;
+    letter-spacing: normal;
+    border: 0;
+    cursor: pointer;
+    text-decoration: none;
+    box-sizing: border-box;
+    transition:
+      background-color 0.2s ease,
+      color 0.2s ease;
+  }
+  .btn:hover {
+    background: #c8325f;
+    color: #ffffff;
+  }
+  .btn.rose {
+    background: #c8325f;
+    color: #ffffff;
+  }
+  .btn.rose:hover {
+    background: #a3244b;
+  }
+  .btn.ghost {
+    background: transparent;
+    color: #1f1219;
+    box-shadow: inset 0 0 0 1.5px #1f1219;
+  }
+  .btn.ghost:hover {
+    background: #1f1219;
+    color: #ffffff;
+  }
+  .btn.light {
+    background: #ffffff;
+    color: #1f1219;
+  }
+  .btn.light:hover {
+    background: #fceef1;
+    color: #1f1219;
+  }
+  .btn.sm {
+    height: 44px;
+    padding: 0 20px;
+    font-size: 14px;
+  }
+
+  /* Icon Button */
+  .icb {
+    width: 44px;
+    height: 44px;
+    border-radius: 999px;
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    background: transparent;
+    border: 0;
+    color: #1f1219;
+    cursor: pointer;
+    position: relative;
+    padding: 0;
+    transition:
+      background-color 0.15s ease,
+      color 0.15s ease;
+  }
+  .icb:hover {
+    background: #fceef1;
+    color: #1f1219;
+  }
+
+  /* Filter pill */
+  .pill {
+    display: inline-flex;
+    align-items: center;
+    height: 40px;
+    padding: 0 18px;
+    border-radius: 999px;
+    border: 1px solid #eadbe0;
+    font-family: "DM Sans", sans-serif;
+    font-weight: 500;
+    font-size: 14px;
+    letter-spacing: normal;
+    background: #ffffff;
+    color: #1f1219;
+    cursor: pointer;
+    transition: all 0.15s ease;
+  }
+  .pill:hover {
+    border-color: #1f1219;
+  }
+  .pill.on {
+    background: #1f1219;
+    color: #ffffff;
+    border-color: #1f1219;
+  }
+
+  /* Product & Card Badges */
+  .badge {
+    position: absolute;
+    left: 12px;
+    top: 12px;
+    height: 26px;
+    padding: 0 10px;
+    border-radius: 999px;
+    background: #ffffff;
+    font-size: 12px;
+    font-weight: 700;
+    letter-spacing: normal;
+    display: inline-flex;
+    align-items: center;
+    color: #1f1219;
+    box-shadow: 0 1px 3px rgba(0, 0, 0, 0.06);
+    z-index: 10;
+  }
+  .badge.sale {
+    background: #c8325f;
+    color: #ffffff;
+  }
+  .badge.new {
+    background: #1f1219;
+    color: #ffffff;
+  }
+
+  /* Star rating */
+  .stars {
+    color: #c8325f;
+    letter-spacing: 2px !important;
+  }
+
+  /* Price styles */
+  .price {
+    font-weight: 700;
+    font-size: 16px;
+    color: #1f1219;
+    letter-spacing: normal;
+  }
+  .was {
+    text-decoration: line-through;
+    color: #7a6570;
+    font-size: 14px;
+    letter-spacing: normal;
+  }
+
+  /* Interactive chip in dark routine finder */
+  .chipd {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    height: 72px;
+    padding: 0 24px;
+    border-radius: 18px;
+    background: rgba(255, 255, 255, 0.07);
+    border: 1px solid rgba(255, 255, 255, 0.14);
+    color: #ffffff;
+    font-family: "DM Sans", sans-serif;
+    font-weight: 600;
+    font-size: 17px;
+    letter-spacing: normal;
+    cursor: pointer;
+    transition: all 0.2s ease;
+  }
+  .chipd:hover {
+    background: #ffffff;
+    color: #1f1219;
+    border-color: #ffffff;
+  }
+
+  /* Details accordion */
+  .acc {
+    border-top: 1px solid #f1e4e8;
+    padding: 20px 0;
+  }
+  .acc summary {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    font-weight: 700;
+    font-size: 16px;
+    cursor: pointer;
+    list-style: none;
+    letter-spacing: normal;
+  }
+  .acc summary::-webkit-details-marker {
+    display: none;
+  }
+
+  /* Tag pill */
+  .tag {
+    display: inline-flex;
+    align-items: center;
+    gap: 6px;
+    height: 32px;
+    padding: 0 12px;
+    border-radius: 999px;
+    background: #f8f1f3;
+    font-size: 13px;
+    font-weight: 600;
+    color: #1f1219;
+    letter-spacing: 0.1em !important;
+  }
+
+  /* Form label & input */
+  .l {
+    display: block;
+    font-size: 13px;
+    font-weight: 600;
+    margin-bottom: 8px;
+    color: #1f1219;
+    letter-spacing: normal;
+  }
+  .f {
+    width: 100%;
+    height: 48px;
+    border: 1px solid #e3d3d9;
+    border-radius: 14px;
+    padding: 0 16px;
+    font-family: "DM Sans", sans-serif;
+    font-size: 15px;
+    color: #1f1219;
+    background: #ffffff;
+    box-sizing: border-box;
+    outline: none;
+    letter-spacing: normal;
+    transition: border-color 0.15s ease;
+  }
+  .f:focus {
+    border-color: #1f1219;
+  }
+
+  /* Checkbox and filter heading */
+  .ck {
+    display: flex;
+    align-items: center;
+    gap: 12px;
+    font-size: 15px;
+    cursor: pointer;
+    user-select: none;
+    letter-spacing: normal;
+  }
+  .ck input[type="checkbox"],
+  .ck input[type="radio"] {
+    width: 18px;
+    height: 18px;
+    accent-color: #c8325f;
+    margin: 0;
+    cursor: pointer;
+  }
+  .fh {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    font-weight: 700;
+    font-size: 15px;
+    padding-bottom: 4px;
+    letter-spacing: normal;
+  }
+
+  /* Pagination button */
+  .pg {
+    width: 44px;
+    height: 44px;
+    border-radius: 999px;
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    font-weight: 600;
+    border: 1px solid #eadbe0;
+    background: #ffffff;
+    color: #1f1219;
+    cursor: pointer;
+    font-family: inherit;
+    font-size: 15px;
+    transition: all 0.15s ease;
+  }
+  .pg:hover {
+    border-color: #1f1219;
+  }
+  .pg.on {
+    background: #1f1219;
+    color: #ffffff;
+    border-color: #1f1219;
+  }
+
+  /* Mobile filter/sort pill */
+  .half {
+    flex: 1;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: 8px;
+    height: 48px;
+    border: 1px solid #eadbe0;
+    border-radius: 999px;
+    background: #ffffff;
+    font-family: "DM Sans", sans-serif;
+    font-weight: 600;
+    font-size: 14px;
+    color: #1f1219;
+    cursor: pointer;
+    transition: background-color 0.15s ease;
+  }
+  .half:hover {
+    background-color: #f8f1f3;
+  }
+
+  /* Product Option Selector */
+  .opt {
+    display: flex;
+    flex-direction: column;
+    align-items: flex-start;
+    gap: 2px;
+    padding: 12px 18px;
+    border-radius: 16px;
+    border: 1.5px solid #eadbe0;
+    background: #ffffff;
+    font-family: "DM Sans", sans-serif;
+    font-weight: 500;
+    font-size: 14px;
+    color: #1f1219;
+    cursor: pointer;
+    min-width: 120px;
+    letter-spacing: normal;
+    transition: all 0.15s ease;
+  }
+  .opt.on {
+    border-color: #1f1219;
+    box-shadow: inset 0 0 0 1px #1f1219;
+  }
+}
+
+/* Custom scrollbar */
+::-webkit-scrollbar {
+  width: 8px;
+  height: 8px;
+}
+::-webkit-scrollbar-track {
+  background: #f8f1f3;
+}
+::-webkit-scrollbar-thumb {
+  background: #eadbe0;
+  border-radius: 4px;
+}
+::-webkit-scrollbar-thumb:hover {
+  background: #c8325f;
+}
